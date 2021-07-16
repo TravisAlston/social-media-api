@@ -32,9 +32,11 @@ const thoughtController = {
         });
     },
 
+// POST /api/thoughts
+
 // PUT /api/thoughts/:id
 updateThought({ params, body }, res) {
-    Thgout.findOneAndUpdate(
+    Thought.findOneAndUpdate(
         {_id: params.id },
         body,
         { new: true }

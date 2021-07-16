@@ -4,6 +4,7 @@ const userController = {
 
     // GET /api/users
     getAllUsers(req, res) {
+        console.log(req);
         User.find({})
         .select('-__v')
         .then(dbUserData => res.json(dbUserData))
@@ -36,6 +37,7 @@ const userController = {
 
     // POST /api/users
     createUser({ body }, res) {
+        console.log(body, res);
         User.create(body)
         .then(dbUserData => res.json(dbUserData))
         .catch(err => res.status(400).json(err));
